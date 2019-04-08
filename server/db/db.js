@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const connection;
+let connection;
 
 const init = () => {
     connection = new Sequelize('database', 'username', 'password', {

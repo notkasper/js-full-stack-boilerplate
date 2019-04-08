@@ -6,12 +6,11 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-  server:
-    container_name: server
-    build: ./server
-    ports:
-      - "80:3000"
+  app:
+    build: .
     volumes:
-      - .:/server
-    links:
-      - postgres
+      - ./server:/app
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    command: nodemon ./server/server.js
