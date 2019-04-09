@@ -1,37 +1,31 @@
 const Sequelize = require("sequelize");
 
-let connection;
+console.log(process.env.DB_HOST || "localhost")
+console.log(process.env.DB_HOST || "localhost")
+console.log(process.env.DB_HOST || "localhost")
+console.log(process.env.DB_HOST || "localhost")
+console.log(process.env.DB_HOST || "localhost")
+console.log(process.env.DB_HOST || "localhost")
+console.log(process.env.DB_HOST || "localhost")
 
-const credentials = {
-  DB_USERNAME: "postgres",
-  DB_PASSWORD: "password",
-  DB_HOST: "localhost",
-  DB_NAME: "hvs"
-};
+const sequelize = new Sequelize("hvs", "hvs", "hvs", {
+  host: process.env.DB_HOST || "localhost",
+  port: "5432",
+  dialect: "postgres",
+  logging: true
+});
 
 const init = async () => {
-  console.log(process.env.DB_USERNAME)
-  connection = new Sequelize(
-    credentials.DB_NAME,
-    credentials.DB_USERNAME,
-    credentials.DB_PASSWORD,
-    {
-      host: "0.0.0.0",
-      dialect: "postgres"
-    }
-  );
-
   try {
-    await connection.authenticate();
+    await sequelize.authenticate();
+    console.log("Sequelize connected to Postgres.");
   } catch (error) {
     console.error(error);
     console.error("gaat helemaal fout");
   }
 };
 
-const getConnection = () => connection;
-
 module.exports = {
   init,
-  getConnection
+  sequelize
 };

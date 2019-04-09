@@ -3,7 +3,6 @@ const express = require("express");
 const db = require("./db/db");
 
 db.init();
-console.log("Sequelize connected to Postgres.")
 
 const app = express();
 
