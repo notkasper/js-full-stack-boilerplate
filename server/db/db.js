@@ -5,8 +5,8 @@ const sequelize = new Sequelize(
   process.env.POSTGRES_USER,
   process.env.POSTGRES_PASSWORD,
   {
-    host: process.env.DB_HOST || "localhost",
-    port: "5432",
+    host: process.env.POSTGRES_HOST || "localhost",
+    port: process.env.POSTGRES_PORT,
     dialect: "postgres",
   }
 );

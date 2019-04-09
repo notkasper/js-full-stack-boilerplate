@@ -2,7 +2,6 @@ FROM node:latest
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
-COPY wait-for-it.sh /app
 RUN npm install
 RUN npm i -g nodemon
 CMD nodemon ./server/server.js

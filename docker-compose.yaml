@@ -24,10 +24,11 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3000
-      - DB_HOST=postgres
+      - POSTGRES_HOST=postgres
       - POSTGRES_PASSWORD=hvs
       - POSTGRES_USER=hvs
       - POSTGRES_DB=hvs
+      - POSTGRES_PORT=5432
     ports:
       - "80:3000"
     depends_on: 
