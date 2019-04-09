@@ -2,17 +2,30 @@ const Sequelize = require("sequelize");
 
 let connection;
 
+const credentials = {
+  DB_USERNAME: "postgres",
+  DB_PASSWORD: "password",
+  DB_HOST: "localhost",
+  DB_NAME: "hvs"
+};
+
 const init = async () => {
-  connection = new Sequelize("hvs", "hvs", "hvs", {
-    host: "localhost",
-    dialect: "postgres"
-  });
+  console.log(process.env.DB_USERNAME)
+  connection = new Sequelize(
+    credentials.DB_NAME,
+    credentials.DB_USERNAME,
+    credentials.DB_PASSWORD,
+    {
+      host: "0.0.0.0",
+      dialect: "postgres"
+    }
+  );
 
   try {
     await connection.authenticate();
   } catch (error) {
     console.error(error);
-    console.error("gaat helemaal fout")
+    console.error("gaat helemaal fout");
   }
 };
 
