@@ -1,10 +1,11 @@
 {
-  "name": "docker-postgres-attempt",
+  "name": "docker-compose-express-psql-sequelize-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "./server.js",
   "scripts": {
-    "dev": "nodemon server"
+    "dev": "docker-compose up",
+    "build-images:dev": "sudo docker-compose build"
   },
   "keywords": [],
   "author": "",

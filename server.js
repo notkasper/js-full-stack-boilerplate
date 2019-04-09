@@ -4,6 +4,8 @@ const db = require("./db");
 
 const test = require('./handlers/test');
 
+console.log(process.env.NODE_ENV);
+
 db.init();
 const app = express();
 
