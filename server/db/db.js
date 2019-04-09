@@ -1,13 +1,5 @@
 const Sequelize = require("sequelize");
 
-console.log(process.env.DB_HOST || "localhost")
-console.log(process.env.DB_HOST || "localhost")
-console.log(process.env.DB_HOST || "localhost")
-console.log(process.env.DB_HOST || "localhost")
-console.log(process.env.DB_HOST || "localhost")
-console.log(process.env.DB_HOST || "localhost")
-console.log(process.env.DB_HOST || "localhost")
-
 const sequelize = new Sequelize("hvs", "hvs", "hvs", {
   host: process.env.DB_HOST || "localhost",
   port: "5432",
@@ -21,7 +13,6 @@ const init = async () => {
     console.log("Sequelize connected to Postgres.");
   } catch (error) {
     console.error(error);
-    console.error("gaat helemaal fout");
   }
 };
 
