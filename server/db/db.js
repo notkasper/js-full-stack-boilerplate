@@ -10,9 +10,16 @@ const sequelize = new Sequelize("hvs", "hvs", "hvs", {
 const init = async () => {
   try {
     await sequelize.authenticate();
-    console.log("Sequelize connected to Postgres.");
   } catch (error) {
-    console.error(error);
+    console.log(`Error while authenticating Sequelize with Postgres: ${error}`);
+    process.exit(1);
+  }
+
+  try {
+    await sequelize.sync();
+  } catch (error) {
+    console.error(`Error while syncing Sequelize with Postgres: ${error}`);
+    process.exit(1);
   }
 };
 
