@@ -1,4 +1,9 @@
 version: '3'
+
+networks:
+  hvs-net:
+    driver: bridge
+
 services:
   postgres:
     image: postgres:11
@@ -6,11 +11,19 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks: 
+      - hvs-net
   app:
     build: .
     volumes:
-      - ./server:/app
+      - .:/app
     environment:
       - NODE_ENV=development
       - PORT=3000
     command: nodemon ./server/server.js
+    networks: 
+      - hvs-net
+    ports:
+      - "80:3000"
+    links:
+      - postgres
