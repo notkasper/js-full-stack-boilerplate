@@ -10,9 +10,9 @@ services:
     volumes:
       - ./postgres-data-volume:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=hvs
-      - POSTGRES_USER=hvs
-      - POSTGRES_DB=hvs
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=database
+      - POSTGRES_DB=my_db
     ports:
       - "5432:5432"
     networks:
@@ -25,9 +25,9 @@ services:
       - NODE_ENV=development
       - PORT=3000
       - POSTGRES_HOST=postgres
-      - POSTGRES_PASSWORD=hvs
-      - POSTGRES_USER=hvs
-      - POSTGRES_DB=hvs
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=database
+      - POSTGRES_DB=my_db
       - POSTGRES_PORT=5432
     ports:
       - "80:3000"
