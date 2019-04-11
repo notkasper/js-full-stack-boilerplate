@@ -9,7 +9,7 @@ ReactDOM.render(
       onClick={() =>
         request
           .get("/api/test")
-          .catch(err => console.error(err).then(res => console.log(res.body)))
+          .catch(err => console.error(err)).then(res => console.log(res.text))
       }
     >Click me!</button>
   </div>,
