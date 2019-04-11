@@ -4,7 +4,7 @@ const path = require("path");
 const db = require("./db");
 const test = require("./handlers/test");
 
-console.log(process.env.NODE_ENV);
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 
 db.init();
 const app = express();

@@ -18,21 +18,16 @@ services:
     networks:
       - database
   app:
-    build: .
-    volumes:
-      - .:/app
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - PORT=3000
       - POSTGRES_HOST=postgres
       - POSTGRES_PASSWORD=admin
       - POSTGRES_USER=database
       - POSTGRES_DB=my_db
       - POSTGRES_PORT=5432
-    ports:
-      - "3000:3000"
     depends_on: 
       - postgres
     networks: 
       - database
-    command: ["nodemon", "./server/server.js"]
+    command: ["nodemon", "./server.js"]
