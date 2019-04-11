@@ -6,7 +6,8 @@
   "scripts": {
     "build:dev": "webpack-dev-server --hot --progress --config webpack.dev.js",
     "build:prod": "webpack --progress --config webpack.prod.js",
-    "dev": "sudo docker-compose build && concurrently \"npm run build:dev\" \"docker-compose up\""
+    "dev": "sudo docker-compose build && concurrently \"npm run build:dev\" \"docker-compose up\"",
+    "start": "docker-compose up"
   },
   "keywords": [],
   "author": "",
