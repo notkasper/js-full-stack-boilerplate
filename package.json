@@ -8,7 +8,7 @@
   "scripts": {
     "install": "cd front-end && npm i && cd ../back-end && npm i && cd server && npm i",
     "dev": "concurrently \"cd front-end && npm run build:dev\" \"cd back-end && npm run run-images:dev\"",
-    "start": "cd back-end && npm run build-images:prod && npm run run-images:prod"
+    "start": "npm run install && cd back-end && npm run build-images:prod && npm run run-images:prod"
   },
   "repository": {
     "type": "git",
