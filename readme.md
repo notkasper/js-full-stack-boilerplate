@@ -1,7 +1,6 @@
 a boilerplate app for a docker-compose app with an express and postgres container. The express server connects to the postgres container using sequelize\\
 
-use command "npm run dev:prep" once to build the initial images for development\\
-from then on use "npm run dev" to boot up the development environment\\
+use command "npm run dev" to start the development environment. First time might take a while since docker needs to build the images from scratch.
 
 for production:\\
 use command "npm start"\\
