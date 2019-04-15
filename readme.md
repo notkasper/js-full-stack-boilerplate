@@ -1,8 +1,19 @@
-a boilerplate app for a docker-compose app with an express and postgres container. The express server connects to the postgres container using sequelize
+A full-stack javascript boilerplate app.
 
-for development:
-Install all node modules with the command "npm i", then use the command "npm run dev" to start the development environment. First time might take a while since docker needs to build the images from scratch.
+Front-end:
+Bundler: webpack
+Tanspiler: babel
+State-management: Mobx
+routing: react-router/react-router-dom
 
-for production:
-use command "npm start"
-this will install all node modules, then it will bundle the front-end, then it will build the docker images for the back-end in production mode, and then it will run the containers.
+Back-end:
+Server framework: express
+Database: postgres
+Database ORM: sequelize
+
+other:
+docker, docker-compose
+
+notable commands:
+npm run dev: runs the development environment
+npm start: runs the production environment
