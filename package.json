@@ -7,7 +7,8 @@
   "devDependencies": {},
   "scripts": {
     "dev": "concurrently \"cd front-end && npm run build:dev\" \"cd back-end && docker-compose -f docker-compose.yml -f docker-compose.override.yml up\"",
-    "start": "cd back-end && docker-compose -f docker-compose.yml -f docker-compose.prod.yml up"
+    "start": "cd back-end && docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
+    "install": "cd back-end && npm i && cd ../front-end && npm i"
   },
   "repository": {
     "type": "git",
