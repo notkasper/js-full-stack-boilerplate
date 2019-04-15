@@ -1,13 +1,17 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const webPackConfig = {
-  entry: './front-end/index.js',
+  entry: './index.js',
+  output: {
+    path: path.resolve(__dirname, '../back-end/server/static')
+  },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './index.html'
     })
   ],
   module: {
