@@ -3,8 +3,6 @@ version: '3.2'
 services:
   app:
     build: .
-    volumes:
-      - .:/app
     environment:
       - NODE_ENV=development
       - PORT=3000
@@ -13,6 +11,4 @@ services:
       - POSTGRES_USER=database
       - POSTGRES_DB=my_db
       - POSTGRES_PORT=5432
-    ports:
-      - "3000:3000"
     command: ["node", "./server.js"]
