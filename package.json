@@ -6,9 +6,9 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "dev": "concurrently \"cd front-end && npm run build:dev\" \"cd back-end && docker-compose -f docker-compose.yml -f docker-compose.override.yml up\"",
-    "start": "cd back-end && docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
-    "install": "cd back-end && npm i && cd ../front-end && npm i"
+    "install": "cd back-end && npm i && cd ../front-end && npm i",
+    "dev": "concurrently \"cd front-end && npm run build:dev\" \"cd back-end && npm run run-images:dev\"",
+    "start": " cd back-end && npm run build-images:prod && npm run run-images:prod"
   },
   "repository": {
     "type": "git",

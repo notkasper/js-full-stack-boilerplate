@@ -6,3 +6,4 @@ RUN npm install
 RUN npm i -g nodemon
 CMD node ./server.js
 EXPOSE 80
+CMD ["node"]
