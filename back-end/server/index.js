@@ -11,11 +11,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static("./dist"));
-
-app.get("/", (req, res) => {
-  res.send("it's working :)");
-});
+app.use(express.static("./static"));
 
 app.get("/api/test", test);
 
