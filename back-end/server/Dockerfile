@@ -3,7 +3,6 @@ RUN mkdir /app
 WORKDIR /app
 COPY . /app
 RUN npm install
-RUN npm i -g nodemon
-CMD node ./server.js
+# RUN npm i -g nodemon
 EXPOSE 80
-CMD ["node"]
+CMD ["node index.js"]
