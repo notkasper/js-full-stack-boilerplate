@@ -2,7 +2,7 @@ A full-stack javascript boilerplate app.
 
 Front-end:\
 Bundler: webpack\
-Tanspiler: babel\
+Transpiler: babel\
 State-management: Mobx\
 routing: react-router/react-router-dom
 
