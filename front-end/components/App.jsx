@@ -1,27 +1,23 @@
 import React from "react";
-import { observer } from "mobx-react";
-import request from "superagent";
+import { Provider } from "mobx-react";
+import { Router, Route } from "react-router-dom";
+import history from "../history";
+import Home from "../pages/Home";
+import Page2 from "../pages/Page2";
+import store from "../stores/store";
 
-@observer
 export default class App extends React.Component {
   render() {
+    const stores = {
+      store
+    };
     return (
-      <div>
-        <p>Hello World!</p>
-        <button
-          onClick={() =>
-            request
-              .get("/api/test")
-              .catch(err => console.error(err))
-              .then(res => console.log(res.text))
-          }
-        >
-          API Test
-        </button>
-        <button
-          onClick={() => this.props.store.incrementCounter()}
-        >{`MOBX Test ${this.props.store.counter}`}</button>
-      </div>
+      <Provider {...stores}>
+        <Router history={history}>
+          <Route path="/" exact component={Home} />
+          <Route path="/page_2" component={Page2} />
+        </Router>
+      </Provider>
     );
   }
 }
