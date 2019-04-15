@@ -1,0 +1,25 @@
+version: '3.2'
+
+networks: 
+  database:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - ./postgres_data_volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=database
+      - POSTGRES_DB=my_db
+    ports:
+      - "5432:5432"
+    networks:
+      - database
+  server:
+    build: ./server
+    depends_on: 
+      - postgres
+    networks: 
+      - database
