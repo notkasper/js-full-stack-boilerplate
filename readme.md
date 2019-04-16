@@ -15,6 +15,6 @@ other:\
 docker, docker-compose
 
 notable commands:\
-npm run install: installs node modules in the needed directories
+npm run install: installs node modules in the needed directories\
 npm run dev: runs the development environment (you should probably run "npm run install" before this)\
 npm start: runs the production environment
