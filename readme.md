@@ -21,4 +21,4 @@ npm start: runs the production environment
 
 
 NOTE:
-you must have docker, docker-compose, node and npm installed for this boilerplate to function prorperly.
+you must have docker, docker-compose, node and npm installed for this boilerplate to function properly.
