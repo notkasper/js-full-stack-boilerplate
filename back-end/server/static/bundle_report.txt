@@ -1,7 +1,0 @@
-react-dom: 106.96 KB (63.4%)
-superagent: 43.62 KB (25.9%)
-react: 6.86 KB (4.07%)
-scheduler: 5.08 KB (3.01%)
-component-emitter: 3.11 KB (1.84%)
-object-assign: 2.06 KB (1.22%)
-<self>: 951 B (0.551%)
